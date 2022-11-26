@@ -1,0 +1,22 @@
+# https://www.javatpoint.com/components-of-spring-cloud
+# https://www.baeldung.com/spring-cloud-bootstrapping
+# https://www.tutorialspoint.com/spring_cloud/spring_cloud_gateway.htm
+# https://www.baeldung.com/spring-cloud-netflix-eureka
+# https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-eureka-server.html
+# https://howtodoinjava.com/spring-cloud/spring-cloud-service-discovery-netflix-eureka/
+server:
+  port: ${SA_CONFIG_SERVER_PORT:8888} # Indicate the default PORT where this service will be started
+spring:
+  application:
+    name: stock-analyzer-config-server
+  profiles:
+    active: dev
+    include: native
+  redis:
+    host: localhost
+    port: 6379
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

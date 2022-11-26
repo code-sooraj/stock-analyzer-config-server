@@ -1,0 +1,19 @@
+# https://www.javatpoint.com/components-of-spring-cloud
+# https://www.baeldung.com/spring-cloud-bootstrapping
+# https://www.tutorialspoint.com/spring_cloud/spring_cloud_gateway.htm
+# https://www.baeldung.com/spring-cloud-netflix-eureka
+# https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-eureka-server.html
+# https://howtodoinjava.com/spring-cloud/spring-cloud-service-discovery-netflix-eureka/
+spring:
+  cloud:
+    config:
+      allowOverride: true
+      overrideNone: true
+      server:
+        native: # file system backend
+          searchLocations: file://${user.home}/stock-analyzer/app-config.properties
+          order: 2
+        redis:
+          order: 1
+  profiles:
+    active: native
